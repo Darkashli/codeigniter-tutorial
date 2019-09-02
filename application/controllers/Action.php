@@ -1,7 +1,6 @@
 <?php
 
-class Action extends CI_Controller
-{
+class Action extends CI_Controller {
 
 	public function __construct()
 	{
@@ -32,7 +31,9 @@ class Action extends CI_Controller
 
 	public function delete_single_user()
 	{
-		echo $this->action_model->delete_specific_user();
+		if($this->action_model->delete_specific_user()) {
+			echo "Data has been deleted";
+		}
 	}
 
 	public function condition()
@@ -40,7 +41,6 @@ class Action extends CI_Controller
 		$data = $this->action_model->get_where_condition_query();
 		echo "<pre>";
 		print_r ($data);
-
 	}
 
 	public function multiCondition()
@@ -49,7 +49,12 @@ class Action extends CI_Controller
 		$data = $this->action_model->get_where_in_condition_query();
 		echo "<pre>";
 		print_r ($data);
-
 	}
 
+	public function get_messages()
+	{
+		$data = $this->action_model->get_user_messages();
+		echo "<pre>";
+		print_r ($data);
+	}
 }

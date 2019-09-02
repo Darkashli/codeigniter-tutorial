@@ -16,7 +16,7 @@ class Site_model extends CI_Model
 
     public function run_my_query()
     {
-        return "This is message from model file";
+        return "This is message from site model file";
     }
 
     public function insert_table_data($data)
@@ -24,8 +24,7 @@ class Site_model extends CI_Model
     	//This is Regular record query of Row query
     	//return $this->db->query("Insert into users (name, mail, phone) Values ('Khara1', 'khara1@gmail.com', '07775000')");
     	//This is Active record query
-    	return $this->db->insert("users", $data); //from Default DB connection 
+    	return $this->db->insert("users", $data); //from Default DB connection
     	return $this->my_interconnect->insert("info", $data); //from my_interconnect DB connection
-
     }
 }
